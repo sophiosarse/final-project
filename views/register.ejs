@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<%- include('partials/header') %>
+<main class="auth-page">
+    <section class="auth-hero container">
+        <h1>SIGN UP</h1>
+    </section>
+    <section class="auth-form-section container">
+        <% if(typeof error !== 'undefined') { %>
+            <div class="error-message">
+                <%= error %>
+            </div>
+        <% } %>
+        <form action="/register" method="POST" class="register-form">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </section>
+</main>
+<script src="/javascripts/main.js"></script>
+
+</body>
+</html>

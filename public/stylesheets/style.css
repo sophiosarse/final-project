@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+    width:100%;
+    max-width:1220px;
+    margin:auto;
+    padding-inline:20px;
+}
+
+.home-page{
+    min-height:calc(100vh - 100px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-section{
+    text-align:center;
+}
+
+.hero-section h1{
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+.hero-section p{
+    font-size:20px;
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    display:inline-block;
+
+    background:black;
+    color:white;
+
+    padding:16px 40px;
+
+    border-radius:8px;
+}
+
+@media (max-width: 1440px){
+
+    .container{
+        max-width: 1100px;
+    }
+
+    .auth-hero h1{
+        font-size: 130px;
+    }
+}
+
+@media (max-width: 1024px){
+
+    .container{
+        padding-inline: 40px;
+    }
+
+    .nav-list-wrapper{
+        gap: 20px;
+    }
+
+    .auth-hero h1{
+        font-size: 100px;
+    }
+
+    .auth-form-section{
+        max-width: 100%;
+    }
+
+    .input-group input{
+        height: 70px;
+    }
+
+    .submit-btn{
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .burger{
+        display: flex;
+    }
+
+    .main-nav{
+
+        display: none;
+
+        position: absolute;
+
+        top: 90px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        padding: 30px 20px;
+
+        border-top: 1px solid #ddd;
+    }
+
+    .main-nav.active{
+        display: block;
+    }
+
+    .nav-list-wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .auth-hero{
+        padding: 40px 0;
+    }
+
+    .auth-hero h1{
+        font-size: 70px;
+    }
+
+    .input-group input{
+        height: 64px;
+        font-size: 16px;
+    }
+
+    .submit-btn{
+        height: 64px;
+        font-size: 18px;
+    }
+
+    .hero-section h1{
+        font-size: 48px;
+    }
+
+    .hero-section p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .container{
+        padding-inline: 20px;
+    }
+
+    .logo{
+        font-size: 20px;
+    }
+
+    .auth-hero h1{
+        font-size: 48px;
+    }
+
+    .hero-section h1{
+        font-size: 36px;
+    }
+
+    .hero-section p{
+        font-size: 16px;
+    }
+
+    .hero-btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    .input-group input{
+        height: 58px;
+        padding-inline: 18px;
+    }
+
+    .submit-btn{
+        height: 58px;
+    }
+}
