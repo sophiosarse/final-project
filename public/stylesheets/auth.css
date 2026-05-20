@@ -1,144 +1,158 @@
-.header{
-    padding:32px 0;
+body {
+    font-family: "Inter", sans-serif;
 }
 
-.nav-wrapper{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.form-container {
+    margin: 0 auto;
 }
 
-.logo{
-    font-size:24px;
-    font-weight:700;
+.title {
+    color: #1A1A1A;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 180px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-top: 1px solid rgba(0, 0, 0, 0.34);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+    margin-top: 50px;
 }
 
-.nav-list-wrapper{
-    display:flex;
-    gap:32px;
-    align-items:center;
-}
-
-.nav-link{
-    font-size:18px;
-}
-
-.auth-link{
-    background:black;
-    color:white;
-
-    padding:12px 24px;
-
-    border-radius:8px;
-}
-
-.burger{
-    display:none;
-
-    background:transparent;
-    border:none;
-
-    flex-direction:column;
-    gap:5px;
-}
-
-.burger span{
-    width:30px;
-    height:3px;
-    background:black;
-}
-
-.auth-page{
-    padding-bottom:100px;
-}
-
-.auth-hero{
-    padding:50px 0;
-
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
-}
-
-.auth-hero h1{
-    text-align:center;
-    font-size:150px;
-}
-
-.auth-form-section{
-    max-width:900px;
-    margin-top:80px;
-}
-
-.register-form{
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-}
-
-.input-group input{
-    width:100%;
-    height:76px;
-
-    border:1px solid #ccc;
-
-    padding-inline:24px;
-
-    font-size:18px;
-}
-
-.submit-btn{
-    height:76px;
-
-    border:none;
-
-    background:black;
-    color:white;
-
-    font-size:22px;
-
-    cursor:pointer;
-}
-
-.error-message{
-    background:#ffe3e3;
-    color:red;
-
-    padding:16px;
-
-    margin-bottom:20px;
-}
-
-@media(max-width:768px){
-
-    .burger{
-        display:flex;
+@media (max-width: 1440px) {
+    .title {
+        font-size: 180px;
     }
+}
 
-    .main-nav{
-        display:none;
-
-        position:absolute;
-
-        top:90px;
-        left:0;
-
-        width:100%;
-
-        background:white;
-
-        padding:30px;
+@media (max-width: 1024px) {
+    .title {
+        font-size: 140px;
     }
+}
 
-    .main-nav.active{
-        display:block;
+@media (max-width: 768px) {
+    .title {
+        font-size: 100px;
     }
+}
 
-    .nav-list-wrapper{
-        flex-direction:column;
-        align-items:flex-start;
+@media (max-width: 576px) {
+    .title {
+        font-size: 60px;
     }
+}
 
-    .auth-hero h1{
-        font-size:70px;
+form {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+}
+
+@media (max-width: 576px) {
+    form {
+        margin-top: 50px;
     }
+}
+
+input {
+    border-radius: 2px;
+    border: 1px solid rgba(109, 110, 118, 0.50);
+    padding: 24px;
+    color: #232536;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    width: 955px;
+    outline: none;
+}
+
+@media (max-width: 1440px) {
+    input {
+        width: 755px;
+    }
+}
+
+@media (max-width: 1024px) {
+    input {
+        width: 90%;
+    }
+}
+
+button {
+    width: 955px;
+    background-color: #1A1A1A;
+    color: #FFF;
+    text-align: center;
+    font-family: Sen, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    padding: 20px 24px;
+    box-sizing: content-box;
+    border: 1px solid #1A1A1A;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: #FFF;
+    color: #1A1A1A;
+}
+
+@media (max-width: 1440px) {
+    button {
+        width: 755px;
+    }
+}
+
+@media (max-width: 1024px) {
+    button {
+        width: 90%;
+    }
+}
+
+.sign-up-btn {
+    display: flex;
+    width: 955px;
+    justify-content: center;
+    color: #1A1A1A;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    gap: 4px;
+    margin: 25px auto 0 auto;
+    text-wrap: nowrap;
+}
+
+@media (max-width: 1440px) {
+    .sign-up-btn {
+        width: 755px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sign-up-btn {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .sign-up-btn {
+        font-size: 14px;
+
+    }
+}
+
+.error {
+    margin-top: 35px;
+    color: darkred;
+    text-align: center;
 }

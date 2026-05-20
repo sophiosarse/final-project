@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     password: {
         type: String,
@@ -16,18 +16,15 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-userSchema.pre('save', async function (next) {
-    if (!this.isModified('password')) {
-        return;
-    }
+userSchema.pre('save', async function(next) {
+    if (!this.isModified('password')) return;
+
     try {
-        this.password =
-            await bcrypt.hash(this.password, 10);
-        next();
+        this.password = await bcrypt.hash(this.password, 10);
+        return;
     } catch (error) {
         next(error);
     }
 });
 
-module.exports =
-    mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
