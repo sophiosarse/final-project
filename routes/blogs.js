@@ -58,7 +58,23 @@ router.post('/new', requireAuth, async function (req, res, next) {
         console.log(e)
     }
 
-})
+});
+
+router.get('/', requireAuth, async function (req, res) {
+    try {
+        const blogs = await Blog.find()
+            .populate('author', 'email')
+            .sort({ createdAt: -1 });
+
+        res.render('blogs', {
+            email: req.session.user.email,
+            blogs
+        });
+    } catch (err) {
+        console.log(err);
+        res.redirect('/');
+    }
+});
 
 
 module.exports = router;

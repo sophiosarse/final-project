@@ -4,23 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Blog | Blogs</title>
-    <link rel="stylesheet" href="./stylesheets/header.css">
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="./stylesheets/blogs.css">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/blogs.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
-          rel="stylesheet">
-    <link rel="shortcut icon" href="./images/blog-icon.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<%- include('partials/header', {email: email}); %>
+<%- include('partials/header', { email }) %>
+<div class="container">
+    <h1 class="blog-title">
+        THE BLOG
+    </h1>
+    <section class="blogs-section">
+        <% if(blogs.length === 0) { %>
+            <p class="empty-message">
+                No blog posts yet.
+            </p>
+        <% } %>
+        <% blogs.forEach(blog => { %>
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span>
+                        <%= blog.author.email %>
+                    </span>
+                    <span>
+                        •
+                        <%= new Date(blog.createdAt).toLocaleDateString() %>
+                    </span>
+                </div>
+                <h2 class="blog-card-title">
+                    <%= blog.title %>
+                </h2>
+                <p class="blog-description">
+                    <%= blog.description %>
+                </p>
+                <div class="blog-content">
+                    <%= blog.content.substring(0, 200) %>
+                    <% if(blog.content.length > 200) { %>...<% } %>
+                </div>
+            </article>
+        <% }) %>
+    </section>
+</div>
 
-<h1 class="blog-title container">
-    THE BLOG
-</h1>
-
+<%- include('partials/footer') %>
 
 </body>
 </html>
