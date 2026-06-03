@@ -66,10 +66,14 @@ router.get('/', requireAuth, async function (req, res) {
             .populate('author', 'email')
             .sort({ createdAt: -1 });
 
+        const recentBlogs = blogs.slice(0, 4);
+
         res.render('blogs', {
             email: req.session.user.email,
-            blogs
+            blogs,
+            recentBlogs
         });
+
     } catch (err) {
         console.log(err);
         res.redirect('/');
