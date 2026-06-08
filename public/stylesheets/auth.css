@@ -68,8 +68,6 @@ input {
     line-height: 28px;
     width: 955px;
     outline: none;
-    max-width:955px;
-    box-sizing:border-box;
 }
 
 @media (max-width: 1440px) {
@@ -100,7 +98,6 @@ button {
     cursor: pointer;
     transition: all 0.2s;
     border-radius: 2px;
-    max-width:955px;
 }
 
 button:hover {

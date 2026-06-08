@@ -4,71 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Blog | Blogs</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="./stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="/stylesheets/blogs.css">
+    <link rel="stylesheet" href="./stylesheets/blogs.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="./images/blog-icon.svg" type="image/x-icon">
 </head>
 <body>
-<%- include('partials/header', { email }) %>
-<div class="container">
-    <h1 class="blog-title">
-        THE BLOG
-    </h1>
-    <section class="recent-section">
-        <h2 class="section-title">
-            Recent blog posts
-        </h2>
-        <div class="recent-grid">
-            <% recentBlogs.forEach((blog,index)=>{ %>
-                <article class="<%= index === 0 ? 'featured-card' : 'recent-card' %>">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <p class="meta">
-                            <%= blog.author.email %> •
-                            <%= new Date(blog.createdAt).toLocaleDateString() %>
-                        </p>
-                        <h3>
-                            <%= blog.title %>
-                        </h3>
-                        <p class="description">
-                            <%= blog.description %>
-                        </p>
-                    </div>
-                </article>
-            <% }) %>
-        </div>
-    </section>
-    <section class="all-posts">
-        <h2 class="section-title">
-            All blog posts
-        </h2>
-        <div class="blogs-grid">
-            <% blogs.forEach(blog=>{ %>
-                <article class="blog-card">
-                    <div class="card-image"></div>
-                    <div class="card-body">
-                        <p class="meta">
-                            <%= blog.author.email %> •
-                            <%= new Date(blog.createdAt).toLocaleDateString() %>
-                        </p>
-                        <h3>
-                            <%= blog.title %>
-                        </h3>
-                        <p class="description">
-                            <%= blog.description %>
-                        </p>
-                    </div>
-                </article>
-            <% }) %>
-        </div>
-    </section>
-</div>
+<%- include('partials/header', {email: email}); %>
 
-<%- include('partials/footer') %>
+<!--<h1 class="blog-title container">-->
+<!--    THE BLOG-->
+<!--</h1>-->
+
 
 </body>
 </html>

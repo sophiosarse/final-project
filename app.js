@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const connectDB = require('./db');
 const session = require("express-session")
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
@@ -33,7 +34,6 @@ app.use(session({
         secure: false
     }
 }));
-
 
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
